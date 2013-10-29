@@ -3,7 +3,7 @@ SimpleCocoaGoogleAnalytics
 
 A simple set of classes of using Google Analytics to track your OS X app's usage.
 
-## How to use:
+## Usage:
 
 Add these to your app's project:
 * AnalyticsHelper.h
@@ -11,8 +11,9 @@ Add these to your app's project:
 * AnalyticsEvent.h
 * AnalyticsEvent.m
 
-See the example app for how to begin reporting and send events.
+Add reporting code to app launch and quit, and on relevant events.
 
+See AppDelegate.m in the example app for how to begin reporting and send events.
 
 ## License
 
