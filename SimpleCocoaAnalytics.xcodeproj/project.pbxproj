@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA8008B3181F3EC500225F5A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8008B2181F3EC500225F5A /* Cocoa.framework */; };
+		AA8008BD181F3EC500225F5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA8008BB181F3EC500225F5A /* InfoPlist.strings */; };
+		AA8008BF181F3EC500225F5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8008BE181F3EC500225F5A /* main.m */; };
+		AA8008C3181F3EC500225F5A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AA8008C1181F3EC500225F5A /* Credits.rtf */; };
+		AA8008C6181F3EC500225F5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8008C5181F3EC500225F5A /* AppDelegate.m */; };
+		AA8008C9181F3EC500225F5A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8008C7181F3EC500225F5A /* MainMenu.xib */; };
+		AA8008CB181F3EC500225F5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8008CA181F3EC500225F5A /* Images.xcassets */; };
+		AA8008D2181F3EC500225F5A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8008D1181F3EC500225F5A /* XCTest.framework */; };
+		AA8008D3181F3EC500225F5A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8008B2181F3EC500225F5A /* Cocoa.framework */; };
+		AA8008DB181F3EC500225F5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA8008D9181F3EC500225F5A /* InfoPlist.strings */; };
+		AA8008DD181F3EC500225F5A /* SimpleCocoaAnalyticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8008DC181F3EC500225F5A /* SimpleCocoaAnalyticsTests.m */; };
+		AA8008E8181F3EEB00225F5A /* AnalyticsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8008E7181F3EEB00225F5A /* AnalyticsHelper.m */; };
+		AA8008E9181F3EEB00225F5A /* AnalyticsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8008E7181F3EEB00225F5A /* AnalyticsHelper.m */; };
+		AA8008EC181F3F2800225F5A /* AnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8008EB181F3F2800225F5A /* AnalyticsEvent.m */; };
+		AA8008ED181F3F2800225F5A /* AnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8008EB181F3F2800225F5A /* AnalyticsEvent.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA8008D4181F3EC500225F5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA8008A7181F3EC500225F5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA8008AE181F3EC500225F5A;
+			remoteInfo = SimpleCocoaAnalytics;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA8008AF181F3EC500225F5A /* SimpleCocoaAnalytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCocoaAnalytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8008B2181F3EC500225F5A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AA8008B5181F3EC500225F5A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AA8008B6181F3EC500225F5A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AA8008B7181F3EC500225F5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA8008BA181F3EC500225F5A /* SimpleCocoaAnalytics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleCocoaAnalytics-Info.plist"; sourceTree = "<group>"; };
+		AA8008BC181F3EC500225F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA8008BE181F3EC500225F5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA8008C0181F3EC500225F5A /* SimpleCocoaAnalytics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleCocoaAnalytics-Prefix.pch"; sourceTree = "<group>"; };
+		AA8008C2181F3EC500225F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AA8008C4181F3EC500225F5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AA8008C5181F3EC500225F5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AA8008C8181F3EC500225F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AA8008CA181F3EC500225F5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA8008D0181F3EC500225F5A /* SimpleCocoaAnalyticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCocoaAnalyticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8008D1181F3EC500225F5A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AA8008D8181F3EC500225F5A /* SimpleCocoaAnalyticsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleCocoaAnalyticsTests-Info.plist"; sourceTree = "<group>"; };
+		AA8008DA181F3EC500225F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA8008DC181F3EC500225F5A /* SimpleCocoaAnalyticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleCocoaAnalyticsTests.m; sourceTree = "<group>"; };
+		AA8008E6181F3EEB00225F5A /* AnalyticsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsHelper.h; sourceTree = "<group>"; };
+		AA8008E7181F3EEB00225F5A /* AnalyticsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsHelper.m; sourceTree = "<group>"; };
+		AA8008EA181F3F2800225F5A /* AnalyticsEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsEvent.h; sourceTree = "<group>"; };
+		AA8008EB181F3F2800225F5A /* AnalyticsEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsEvent.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA8008AC181F3EC500225F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8008B3181F3EC500225F5A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8008CD181F3EC500225F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8008D3181F3EC500225F5A /* Cocoa.framework in Frameworks */,
+				AA8008D2181F3EC500225F5A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA8008A6181F3EC500225F5A = {
+			isa = PBXGroup;
+			children = (
+				AA8008B8181F3EC500225F5A /* SimpleCocoaAnalytics */,
+				AA8008D6181F3EC500225F5A /* SimpleCocoaAnalyticsTests */,
+				AA8008B1181F3EC500225F5A /* Frameworks */,
+				AA8008B0181F3EC500225F5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA8008B0181F3EC500225F5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008AF181F3EC500225F5A /* SimpleCocoaAnalytics.app */,
+				AA8008D0181F3EC500225F5A /* SimpleCocoaAnalyticsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA8008B1181F3EC500225F5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008B2181F3EC500225F5A /* Cocoa.framework */,
+				AA8008D1181F3EC500225F5A /* XCTest.framework */,
+				AA8008B4181F3EC500225F5A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA8008B4181F3EC500225F5A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008B5181F3EC500225F5A /* AppKit.framework */,
+				AA8008B6181F3EC500225F5A /* CoreData.framework */,
+				AA8008B7181F3EC500225F5A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AA8008B8181F3EC500225F5A /* SimpleCocoaAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008C4181F3EC500225F5A /* AppDelegate.h */,
+				AA8008C5181F3EC500225F5A /* AppDelegate.m */,
+				AA8008EE181F3F3000225F5A /* Analytics */,
+				AA8008C7181F3EC500225F5A /* MainMenu.xib */,
+				AA8008CA181F3EC500225F5A /* Images.xcassets */,
+				AA8008B9181F3EC500225F5A /* Supporting Files */,
+			);
+			path = SimpleCocoaAnalytics;
+			sourceTree = "<group>";
+		};
+		AA8008B9181F3EC500225F5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008BA181F3EC500225F5A /* SimpleCocoaAnalytics-Info.plist */,
+				AA8008BB181F3EC500225F5A /* InfoPlist.strings */,
+				AA8008BE181F3EC500225F5A /* main.m */,
+				AA8008C0181F3EC500225F5A /* SimpleCocoaAnalytics-Prefix.pch */,
+				AA8008C1181F3EC500225F5A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA8008D6181F3EC500225F5A /* SimpleCocoaAnalyticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008DC181F3EC500225F5A /* SimpleCocoaAnalyticsTests.m */,
+				AA8008D7181F3EC500225F5A /* Supporting Files */,
+			);
+			path = SimpleCocoaAnalyticsTests;
+			sourceTree = "<group>";
+		};
+		AA8008D7181F3EC500225F5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008D8181F3EC500225F5A /* SimpleCocoaAnalyticsTests-Info.plist */,
+				AA8008D9181F3EC500225F5A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA8008EE181F3F3000225F5A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				AA8008EA181F3F2800225F5A /* AnalyticsEvent.h */,
+				AA8008EB181F3F2800225F5A /* AnalyticsEvent.m */,
+				AA8008E6181F3EEB00225F5A /* AnalyticsHelper.h */,
+				AA8008E7181F3EEB00225F5A /* AnalyticsHelper.m */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA8008AE181F3EC500225F5A /* SimpleCocoaAnalytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8008E0181F3EC500225F5A /* Build configuration list for PBXNativeTarget "SimpleCocoaAnalytics" */;
+			buildPhases = (
+				AA8008AB181F3EC500225F5A /* Sources */,
+				AA8008AC181F3EC500225F5A /* Frameworks */,
+				AA8008AD181F3EC500225F5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleCocoaAnalytics;
+			productName = SimpleCocoaAnalytics;
+			productReference = AA8008AF181F3EC500225F5A /* SimpleCocoaAnalytics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA8008CF181F3EC500225F5A /* SimpleCocoaAnalyticsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8008E3181F3EC500225F5A /* Build configuration list for PBXNativeTarget "SimpleCocoaAnalyticsTests" */;
+			buildPhases = (
+				AA8008CC181F3EC500225F5A /* Sources */,
+				AA8008CD181F3EC500225F5A /* Frameworks */,
+				AA8008CE181F3EC500225F5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA8008D5181F3EC500225F5A /* PBXTargetDependency */,
+			);
+			name = SimpleCocoaAnalyticsTests;
+			productName = SimpleCocoaAnalyticsTests;
+			productReference = AA8008D0181F3EC500225F5A /* SimpleCocoaAnalyticsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA8008A7181F3EC500225F5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = foxnsox;
+				TargetAttributes = {
+					AA8008CF181F3EC500225F5A = {
+						TestTargetID = AA8008AE181F3EC500225F5A;
+					};
+				};
+			};
+			buildConfigurationList = AA8008AA181F3EC500225F5A /* Build configuration list for PBXProject "SimpleCocoaAnalytics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA8008A6181F3EC500225F5A;
+			productRefGroup = AA8008B0181F3EC500225F5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA8008AE181F3EC500225F5A /* SimpleCocoaAnalytics */,
+				AA8008CF181F3EC500225F5A /* SimpleCocoaAnalyticsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA8008AD181F3EC500225F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8008BD181F3EC500225F5A /* InfoPlist.strings in Resources */,
+				AA8008CB181F3EC500225F5A /* Images.xcassets in Resources */,
+				AA8008C3181F3EC500225F5A /* Credits.rtf in Resources */,
+				AA8008C9181F3EC500225F5A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8008CE181F3EC500225F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8008DB181F3EC500225F5A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA8008AB181F3EC500225F5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8008C6181F3EC500225F5A /* AppDelegate.m in Sources */,
+				AA8008EC181F3F2800225F5A /* AnalyticsEvent.m in Sources */,
+				AA8008BF181F3EC500225F5A /* main.m in Sources */,
+				AA8008E8181F3EEB00225F5A /* AnalyticsHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8008CC181F3EC500225F5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8008E9181F3EEB00225F5A /* AnalyticsHelper.m in Sources */,
+				AA8008ED181F3F2800225F5A /* AnalyticsEvent.m in Sources */,
+				AA8008DD181F3EC500225F5A /* SimpleCocoaAnalyticsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA8008D5181F3EC500225F5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA8008AE181F3EC500225F5A /* SimpleCocoaAnalytics */;
+			targetProxy = AA8008D4181F3EC500225F5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA8008BB181F3EC500225F5A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA8008BC181F3EC500225F5A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA8008C1181F3EC500225F5A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA8008C2181F3EC500225F5A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		AA8008C7181F3EC500225F5A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA8008C8181F3EC500225F5A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		AA8008D9181F3EC500225F5A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA8008DA181F3EC500225F5A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA8008DE181F3EC500225F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AA8008DF181F3EC500225F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AA8008E1181F3EC500225F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleCocoaAnalytics/SimpleCocoaAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "SimpleCocoaAnalytics/SimpleCocoaAnalytics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA8008E2181F3EC500225F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleCocoaAnalytics/SimpleCocoaAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "SimpleCocoaAnalytics/SimpleCocoaAnalytics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AA8008E4181F3EC500225F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpleCocoaAnalytics.app/Contents/MacOS/SimpleCocoaAnalytics";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleCocoaAnalytics/SimpleCocoaAnalytics-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SimpleCocoaAnalyticsTests/SimpleCocoaAnalyticsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AA8008E5181F3EC500225F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpleCocoaAnalytics.app/Contents/MacOS/SimpleCocoaAnalytics";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleCocoaAnalytics/SimpleCocoaAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "SimpleCocoaAnalyticsTests/SimpleCocoaAnalyticsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA8008AA181F3EC500225F5A /* Build configuration list for PBXProject "SimpleCocoaAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8008DE181F3EC500225F5A /* Debug */,
+				AA8008DF181F3EC500225F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA8008E0181F3EC500225F5A /* Build configuration list for PBXNativeTarget "SimpleCocoaAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8008E1181F3EC500225F5A /* Debug */,
+				AA8008E2181F3EC500225F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AA8008E3181F3EC500225F5A /* Build configuration list for PBXNativeTarget "SimpleCocoaAnalyticsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8008E4181F3EC500225F5A /* Debug */,
+				AA8008E5181F3EC500225F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA8008A7181F3EC500225F5A /* Project object */;
+}
