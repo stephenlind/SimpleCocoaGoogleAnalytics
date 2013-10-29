@@ -19,3 +19,7 @@ See AppDelegate.m in the example app for how to begin reporting and send events.
 
 This project uses the MIT License.
 
+## Contribution
+
+There are many features of google analytics that I haven't implemented. Pull requests are welcome.
+
