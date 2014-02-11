@@ -11,6 +11,7 @@
 
 // User Defaults Keys
 static NSString *const kMachineIdentifierKey = @"analyticsMachineIdentifier";
+static NSString *const kRecordedScreensKey = @"analyticsScreens";
 static NSString *const kRecordedEventsKey = @"analyticsEvents";
 static NSString *const kSendErrorCountKey = @"analyticsSendErrors";
 static NSString *const kAnalyticsUrl = @"http://google-analytics.com/collect";
@@ -59,6 +60,7 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
 
 @interface AnalyticsHelper()
 @property (strong) id<AnalyticsNetworkHandler> networkHandler;
+@property (strong) NSMutableArray *cachedScreens;
 @property (strong) NSMutableArray *cachedEvents;
 @property NSUInteger sendInterval;
 @property (strong) NSString *googleAccountIdentifier;
@@ -92,6 +94,7 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
     if (self) {
         _launchDate = NSDate.date;
         _networkHandler = [[ProductionNetworkHandler alloc] init];
+        _cachedScreens = [NSMutableArray new];
         _cachedEvents = [NSMutableArray new];
         _sendInterval = kDefaultSendInterval;
         _appVersion = @"0.0";
@@ -110,8 +113,12 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
 }
 
 - (void)recordSendError {
+    [self recordSendErrorWithCount:1];
+}
+
+- (void)recordSendErrorWithCount:(NSUInteger)count {
     NSUInteger prevErrorCount = [self getErrorCount];
-    NSNumber *errorCount = [NSNumber numberWithUnsignedInteger:prevErrorCount + 1];
+    NSNumber *errorCount = [NSNumber numberWithUnsignedInteger:prevErrorCount + count];
     [NSUserDefaults.standardUserDefaults setObject:errorCount forKey:kSendErrorCountKey];
 }
 
@@ -130,7 +137,12 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
     [self recordCachedEventWithCategory:@"Application" action:@"Close" label:dateString value:durationInSeconds];
     
     // This must be called last
+    [self saveCachedScreensToDisk];
     [self saveCachedEventsToDisk];
+}
+
+- (void)recordScreenWithName:(NSString*)screenName {
+    [self.cachedScreens addObject:screenName];
 }
 
 - (void)recordCachedEventWithCategory:(NSString*)eventCategory
@@ -145,6 +157,23 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
     analyticsEvent.value = eventValue;
     
     [self.cachedEvents addObject:analyticsEvent];
+}
+
+- (void)saveCachedScreensToDisk {
+    // Get the previously recorded screen names
+    NSMutableArray *recordedScreens = [NSMutableArray new];
+    NSArray *previouslyRecordedScreens = [self recordedEventDictionaries];
+    if (previouslyRecordedScreens) {
+        [recordedScreens addObjectsFromArray:previouslyRecordedScreens];
+    }
+    
+    // Convert the events to dictionaries for storage, add to the existing events
+    for (NSString *screenName in self.cachedScreens) {
+        [recordedScreens addObject:screenName];
+    }
+    
+    [NSUserDefaults.standardUserDefaults setObject:recordedScreens forKey:kRecordedScreensKey];
+    [self.cachedEvents removeAllObjects];
 }
 
 - (void)saveCachedEventsToDisk {
@@ -165,12 +194,20 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
     [self.cachedEvents removeAllObjects];
 }
 
+- (void)clearRecordedScreens {
+    [NSUserDefaults.standardUserDefaults removeObjectForKey:kRecordedScreensKey];
+}
+
 - (void)clearRecordedEvents {
     [NSUserDefaults.standardUserDefaults removeObjectForKey:kRecordedEventsKey];
 }
 
 - (NSArray*)recordedEventDictionaries {
     return [NSUserDefaults.standardUserDefaults objectForKey:kRecordedEventsKey];
+}
+
+- (NSArray*)recordedScreens {
+    return [NSUserDefaults.standardUserDefaults objectForKey:kRecordedScreensKey];
 }
 
 - (NSArray*)recordedEvents {
@@ -198,54 +235,69 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
 - (void)sendReport {
     if (self.reportInProgress == NO) {
         self.reportInProgress = YES;
+        
+        // Retrieve any stored screens
+        NSArray *screens = [self recordedScreens];
+        
         // Retrieve any stored events
         NSArray *events = [self recordedEvents];
         
         // Retrieve analytics send error count
-        NSUInteger errorCount = [self getErrorCount];
+        NSUInteger recordedErrorCount = [self getErrorCount];
         
         NSString *machineIdentifier = [self getUniqueMachineIdentifier];
         
         // Clear non-error stored events
         [self clearRecordedEvents];
-        NSData *launchPayload = [self.networkHandler createScreenViewPayload:@"Heartbeat"
-                                                           machineIdentifier:machineIdentifier
-                                                           accountIdentifier:self.googleAccountIdentifier
-                                                                     appName:self.appName
-                                                                  appVersion:self.appVersion];
         
         dispatch_async(dispatch_get_global_queue(0,0), ^{
-            BOOL success = [self.networkHandler sendPayload:launchPayload];
+            // A count for errors occurred in this report
+            NSUInteger errorCount = 0;
+            
             BOOL errorsSent = NO;
-            if (success) {
-                // We successfully sent the launch screen event, send the other recorded events
-                for (AnalyticsEvent *event in events) {
-                    NSData *eventPayload = [self.networkHandler createEventPayload:event
-                                                                 machineIdentifier:machineIdentifier
-                                                                 accountIdentifier:self.googleAccountIdentifier
-                                                                           appName:self.appName appVersion:self.appVersion];
-                    [self.networkHandler sendPayload:eventPayload];
+            
+            // Send recorded screen events
+            for (NSString *screenName in screens) {
+                NSData *screenPayload = [self.networkHandler createScreenViewPayload:screenName
+                                                                   machineIdentifier:machineIdentifier
+                                                                   accountIdentifier:self.googleAccountIdentifier
+                                                                             appName:self.appName
+                                                                          appVersion:self.appVersion];
+                BOOL success = [self.networkHandler sendPayload:screenPayload];
+                if (!success) {
+                    errorCount += 1;
                 }
-                
-                if (errorCount > 0) {
-                    AnalyticsEvent *errorEvent = [[AnalyticsEvent alloc] init];
-                    errorEvent.category = @"Error";
-                    errorEvent.action = @"Analytics Send Failure";
-                    errorEvent.value = [NSNumber numberWithUnsignedInteger:errorCount];
-                    
-                    NSData *errorPayload = [self.networkHandler createEventPayload:errorEvent
-                                                                 machineIdentifier:machineIdentifier
-                                                                 accountIdentifier:self.googleAccountIdentifier
-                                                                           appName:self.appName
-                                                                        appVersion:self.appVersion];
-                    
-                    errorsSent = [self.networkHandler sendPayload:errorPayload];
+            }
+            
+            // Send the other recorded events
+            for (AnalyticsEvent *event in events) {
+                NSData *eventPayload = [self.networkHandler createEventPayload:event
+                                                             machineIdentifier:machineIdentifier
+                                                             accountIdentifier:self.googleAccountIdentifier
+                                                                       appName:self.appName appVersion:self.appVersion];
+                BOOL success = [self.networkHandler sendPayload:eventPayload];
+                if (!success) {
+                    errorCount += 1;
                 }
+            }
+            
+            if (recordedErrorCount > 0) {
+                AnalyticsEvent *errorEvent = [[AnalyticsEvent alloc] init];
+                errorEvent.category = @"Error";
+                errorEvent.action = @"Analytics Send Failure";
+                errorEvent.value = [NSNumber numberWithUnsignedInteger:recordedErrorCount];
                 
+                NSData *errorPayload = [self.networkHandler createEventPayload:errorEvent
+                                                             machineIdentifier:machineIdentifier
+                                                             accountIdentifier:self.googleAccountIdentifier
+                                                                       appName:self.appName
+                                                                    appVersion:self.appVersion];
+                
+                errorsSent = [self.networkHandler sendPayload:errorPayload];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (NO == success) {
-                    [self recordSendError];
+                if (errorCount > 0) {
+                    [self recordSendErrorWithCount:errorCount];
                 } else if (errorsSent) {
                     [self clearErrors];
                 }
@@ -269,6 +321,7 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
 
 - (void)createAndSendReport:(id)sender {
     if (self.allowReporting) {
+        [self saveCachedScreensToDisk];
         [self saveCachedEventsToDisk];
         [self sendReport];
     }
