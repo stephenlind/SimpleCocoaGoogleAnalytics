@@ -17,7 +17,7 @@ See AppDelegate.m in the example app for how to begin reporting and send events.
 
 ## License
 
-This project uses the MIT License.
+This project uses the [MIT License](LICENSE.md).
 
 ## Contribution
 
