@@ -173,7 +173,7 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
     }
     
     [NSUserDefaults.standardUserDefaults setObject:recordedScreens forKey:kRecordedScreensKey];
-    [self.cachedEvents removeAllObjects];
+    [self.cachedScreens removeAllObjects];
 }
 
 - (void)saveCachedEventsToDisk {
@@ -246,6 +246,9 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
         NSUInteger recordedErrorCount = [self getErrorCount];
         
         NSString *machineIdentifier = [self getUniqueMachineIdentifier];
+        
+        // Clear non-error stored screens
+        [self clearRecordedScreens];
         
         // Clear non-error stored events
         [self clearRecordedEvents];
