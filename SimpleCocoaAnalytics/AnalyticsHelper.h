@@ -24,6 +24,9 @@
 // [NSUserDefaults.standardUserDefaults synchronize];
 - (void)handleApplicationWillClose;
 
+// Track a screen. These are cached until the next report interval
+- (void)recordScreenWithName:(NSString*)screenName;
+
 // Record an event. These are cached until the next report interval
 - (void)recordCachedEventWithCategory:(NSString*)eventCategory
                                  action:(NSString*)eventAction

@@ -1,0 +1,10 @@
+
+*.xccheckout
+
+*.xcworkspacedata
+
+*.xcuserstate
+
+*.xcscheme
+
+xcuserdata
