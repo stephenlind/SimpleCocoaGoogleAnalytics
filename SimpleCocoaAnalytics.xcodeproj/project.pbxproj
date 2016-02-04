@@ -58,6 +58,8 @@
 		AA8008E7181F3EEB00225F5A /* AnalyticsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsHelper.m; sourceTree = "<group>"; };
 		AA8008EA181F3F2800225F5A /* AnalyticsEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsEvent.h; sourceTree = "<group>"; };
 		AA8008EB181F3F2800225F5A /* AnalyticsEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsEvent.m; sourceTree = "<group>"; };
+		AA87D0C01C62FA70004DE4F5 /* AnalyticsHelper+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AnalyticsHelper+Testing.h"; sourceTree = "<group>"; };
+		AA87D0C11C62FAE0004DE4F5 /* AnalyticsHelperNetworkProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsHelperNetworkProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,8 @@
 		AA8008D6181F3EC500225F5A /* SimpleCocoaAnalyticsTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA87D0C11C62FAE0004DE4F5 /* AnalyticsHelperNetworkProtocol.h */,
+				AA87D0C01C62FA70004DE4F5 /* AnalyticsHelper+Testing.h */,
 				AA8008DC181F3EC500225F5A /* SimpleCocoaAnalyticsTests.m */,
 				AA8008D7181F3EC500225F5A /* Supporting Files */,
 			);
@@ -488,6 +492,7 @@
 				AA8008E2181F3EC500225F5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA8008E3181F3EC500225F5A /* Build configuration list for PBXNativeTarget "SimpleCocoaAnalyticsTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				AA8008E5181F3EC500225F5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
